@@ -1,0 +1,26 @@
+$PROJECT_DIRS = ["~/code"]
+
+xontrib load docker_tabcomplete autoxsh avox
+aliases['ex'] = "true @(exec(open('ex').read()))" 
+
+#Prompt without git branch indication
+$PROMPT = '[{env_name}{NO_COLOR}{user}{INTENSE_RED}@{NO_COLOR}{hostname}{BOLD_BLUE} {cwd}{NO_COLOR}]{prompt_end} '
+#Prompt with git branch indication
+#$PROMPT = '[{env_name}{NO_COLOR}{user}{INTENSE_RED}@{NO_COLOR}{hostname}{BOLD_BLUE} {cwd}{branch_color}{curr_branch: {}}{NO_COLOR}{BOLD_BLUE}{NO_COLOR}]{prompt_end} '
+
+k = 1000 #kilo
+m = k * k #mega, million
+g = m * k #giga, billion
+t = g * k #tera, trillion
+b = 8 #byte
+
+$XONSH_COLOR_STYLE = 'default'
+#$XONSH_SHOW_TRACEBACK = True
+
+
+# XONSH WIZARD START
+$AUTO_SUGGEST_IN_COMPLETIONS = '1'
+$COMPLETIONS_CONFIRM = '1'
+$VI_MODE = '1'
+source-bash "echo loading xonsh foreign shell"
+# XONSH WIZARD END
